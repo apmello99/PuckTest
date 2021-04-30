@@ -116,16 +116,11 @@
       if (error) console.log('error: ', error);
       console.log('value: ', value);
       myValue = value;
-      var acceleration = myValue.split('|');
-      console.log('Acceleration: ', acceleration);
-      plot(parseFloat(acceleration[0]), parseFloat(acceleration[1]), parseFloat(acceleration[2]));
+      var pulseOx = myValue.split('|');
+      console.log('PulseOx: ', pulseOx);
+      plot(parseFloat(pulseOx[0]), parseFloat(pulseOx[1]));
       // After getting a value, call p5ble.read() again to get the value again
       myBLE.read(myCharacteristic, 'string', gotValue);
-    }
-
-    function draw() {
-      background(250);
-      text(myValue, 150, 100);
     }
   </script>
 
